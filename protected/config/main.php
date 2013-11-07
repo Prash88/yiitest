@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Java Drag',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -16,10 +16,18 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'bootstrap.helpers.TbHtml',
 	),
+	
+	   'aliases' => array(
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), 
+    ),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
+		 'gii' => array(
+            'generatorPaths' => array('bootstrap.gii'),
+        ),
 		/*
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
@@ -36,6 +44,9 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		 'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',   
+        ),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
