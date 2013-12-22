@@ -1,7 +1,7 @@
 <?php
 /* @var $this SiteController */
 $this->pageTitle=Yii::app()->name;
-?>
+?>   
 <div class="container">
 
 	<div class="row">
@@ -35,4 +35,25 @@ $this->pageTitle=Yii::app()->name;
 	
 	</div>
 	</div>
+ 
 </div>
+<?php
+
+
+echo '<div id="xxx" style="width:200px;height:80px;border:1px solid #eee">';
+$this->beginWidget('zii.widgets.jui.CJuiDraggable',
+        array(
+                'options'=>array('containment'=>'#xxx'), //set who is the containment
+                 'htmlOptions'=> array(
+                         'style'=>'float:left;width:50px;height:50px;border:1px solid #000',
+                 )
+        )
+);
+
+echo 'Drag me';
+
+$this->endWidget();
+
+echo '</div>';
+
+?>

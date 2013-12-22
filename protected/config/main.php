@@ -47,6 +47,14 @@ return array(
 		 'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',   
         ),
+         'clientScript'=>array(
+            'packages'=>array(
+                'jquery'=>array(
+                    'baseUrl'=>'//ajax.googleapis.com/ajax/libs/jquery/1/',
+                    'js'=>array('jquery.min.js'),
+                )
+            ),
+        ),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

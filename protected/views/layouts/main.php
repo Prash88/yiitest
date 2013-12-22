@@ -4,13 +4,17 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
+	<?php Yii::app()->clientScript->registerCoreScript('jquery');
+	Yii::app()->clientScript->registerCoreScript('jquery.ui');  
+
+	?>
 	<?php Yii::app()->bootstrap->register(); ?>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body>
+	<?php $this->widget('application.extensions.fontsizer.Sizer'); ?>
 	<div id="wrap">
-
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
